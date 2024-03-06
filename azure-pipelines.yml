@@ -20,6 +20,8 @@ steps:
     organizationId: 'f2393bc70ea94449b91fbc3956ed8964'
     applicationId: 'wgj'
     stage: 'Build'
+    enableDebugLogging: true
+    scanTargets: '**/*.jar, **/*.war, **/*.ear, **/*.zip, **/*.tar.gz'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
