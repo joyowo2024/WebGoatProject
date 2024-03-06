@@ -1,4 +1,5 @@
 # Starter pipeline
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -12,6 +13,13 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
+
+- task: NexusIqPipelineTask@1
+  inputs:
+    nexusIqService: 'nxiq-web-goat'
+    organizationId: 'f2393bc70ea94449b91fbc3956ed8964'
+    applicationId: 'wgj'
+    stage: 'Build'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
