@@ -17,6 +17,7 @@ steps:
     applicationId: 'wgj'
     stage: 'Build'
     scanPipelineWorkspace: true
+    scanTargets: '**/*.jar, **/*.war, **/*.ear, **/*.zip, **/*.tar.gz'
   
 
 - script: echo Hello, world!
