@@ -8,7 +8,9 @@ trigger:
 - main
 
 pool:
-  vmImage: web-goat-pool
+  name: 'web-goat-pool'
+  demands:
+  - npm
 
 steps:
 - script: echo Hello, world!
