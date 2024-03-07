@@ -10,16 +10,6 @@ trigger:
 pool: web-goat-pool
 
 steps:
-
-- task: NexusIqPipelineTask@1
-  inputs:
-    nexusIqService: 'nxiq-WebGoat'
-    organizationId: 'f2393bc70ea94449b91fbc3956ed8964'
-    applicationId: 'wgj'
-    stage: 'Build'
-    scanPipelineWorkspace: true
-   
-    
 - task: Maven@4
   displayName: Maven Install
   inputs:
@@ -30,6 +20,15 @@ steps:
     mavenVersionOption: 'Default'
     mavenAuthenticateFeed: false
     effectivePomSkip: false
+- task: NexusIqPipelineTask@1
+  inputs:
+    nexusIqService: 'nxiq-WebGoat'
+    organizationId: 'f2393bc70ea94449b91fbc3956ed8964'
+    applicationId: 'wgj'
+    stage: 'Build'
+    scanPipelineWorkspace: true
+   
+    
 
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
