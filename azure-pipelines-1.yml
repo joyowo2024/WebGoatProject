@@ -10,7 +10,8 @@ trigger:
 pool: web-goat-pool
 
 steps:
-
+- script: |
+     ls
 - task: Maven@4
   displayName: Maven Install
   inputs:
@@ -35,6 +36,7 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
+
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
