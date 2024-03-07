@@ -9,8 +9,7 @@ trigger:
 
 pool:
   name: 'web-goat-pool'
-  demands:
-  - npm
+
 
 steps:
 - script: echo Hello, world!
