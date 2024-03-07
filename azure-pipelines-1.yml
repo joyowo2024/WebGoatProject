@@ -10,6 +10,7 @@ trigger:
 pool: web-goat-pool
 
 steps:
+
 - task: NexusIqPipelineTask@1
   inputs:
     nexusIqService: 'nxiq-WebGoat'
@@ -18,7 +19,17 @@ steps:
     stage: 'Build'
     scanPipelineWorkspace: true
     scanTargets: '**/*.jar, **/*.war, **/*.ear, **/*.zip, **/*.tar.gz'
-  
+    
+- task: Maven@4
+  displayName: Maven Install
+  inputs:
+    mavenPomFile: 'WebGoat/pom.xml'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
 
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
@@ -27,3 +38,4 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+
