@@ -13,7 +13,7 @@ steps:
 - task: NexusIqPipelineTask@1
   inputs:
     nexusIqService: 'nxiq-WebGoat'
-    organizationId: 'f2393bc70ea94449b91fbc3956ed8964f'
+    organizationId: 'f2393bc70ea94449b91fbc3956ed8964'
     applicationId: 'wgj'
     stage: 'Build'
     scanPipelineWorkspace: true
