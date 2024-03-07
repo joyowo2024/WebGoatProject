@@ -10,12 +10,11 @@ trigger:
 pool: web-goat-pool
 
 steps:
-- script: |
-     ls
+
 - task: Maven@4
   displayName: Maven Install
   inputs:
-    mavenPomFile: 'WebGoatProject/pom.xml'
+    mavenPomFile: 'pom.xml'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
