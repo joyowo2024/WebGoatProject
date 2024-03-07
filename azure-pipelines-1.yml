@@ -1,4 +1,5 @@
 # Starter pipeline
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -6,10 +7,18 @@
 trigger:
 - main
 
-pool:
-  vmImage: ubuntu-latest
+pool: web-goat-pool
 
 steps:
+- task: NexusIqPipelineTask@1
+  inputs:
+    nexusIqService: 'nxiq-WebGoat'
+    organizationId: '75c0f69238b047ed87cfaa1f8dc3b58f'
+    applicationId: 'web-goat-J'
+    stage: 'Build'
+    scanPipelineWorkspace: true
+  
+
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
