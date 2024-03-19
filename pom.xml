@@ -153,7 +153,10 @@
 
   <dependencyManagement>
     <dependencies>
-#Adding maven plugins 
+
+
+
+       <dependency>
          <groupId>org.owasp</groupId>
             <artifactId>dependency-check-core</artifactId>
             <version>${project.parent.version}</version>
@@ -234,7 +237,10 @@
             <artifactId>maven-artifact</artifactId>
             <scope>provided</scope>
         </dependency>
-    #end of maven dependencies  
+
+
+
+        
       <dependency>
         <groupId>org.ow2.asm</groupId>
         <artifactId>asm</artifactId>
